@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✨ Elegant Modern E-commerce Theme — Cream, Sage, & Gold Accents */
+
+@layer base {
+  :root {
+    /* 🌿 Base palette: clean, elegant neutrals */
+    --background: 40 25% 97%; /* soft cream */
+    --foreground: 30 10% 20%; /* dark coffee text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 20%;
+
+    /* 🟡 Primary / Gold accents */
+    --primary: 40 60% 45%; /* warm golden tone */
+    --primary-foreground: 0 0% 98%;
+
+    /* 🌱 Secondary / Sage green tones */
+    --secondary: 142 22% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted text / subtle UI elements */
+    --muted: 30 10% 85%;
+    --muted-foreground: 30 8% 40%;
+
+    /* Accent tone (hover highlights, links, borders) */
+    --accent: 40 30% 70%;
+    --accent-foreground: 30 10% 20%;
+
+    /* Error & Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders & Inputs */
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 40 60% 45%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar palette */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 30 10% 20%;
+    --sidebar-primary: 40 60% 45%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 142 22% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 30 10% 85%;
+    --sidebar-ring: 40 60% 45%;
+
+    /* ✨ Shadows */
+    --shadow-soft: 0 6px 20px -6px hsl(40 20% 70% / 0.3);
+    --shadow-glow: 0 0 20px hsl(40 60% 45% / 0.25);
+    --shadow-card: 0 8px 25px -8px hsl(30 20% 50% / 0.3);
+
+    /* 🎬 Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* 🌙 Dark mode — moody but still elegant */
+  .dark {
+    --background: 30 15% 8%;
+    --foreground: 40 25% 95%;
+    --card: 30 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 30 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 40 60% 50%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 142 22% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 30 10% 25%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 40 30% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 25%;
+    --input: 30 10% 25%;
+    --ring: 40 60% 50%;
+  }
+
+  /* 🧭 Global Resets */
+  * {
+    @apply border-border;
+    transition: var(--transition-smooth);
+  }
+
+  html,
+  body {
+    min-height: 100%;
+    min-width: 100%;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary) / 0.6);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary));
+  }
+}
+
+/* ✂️ Line clamps */
+.line-clamp-1, .line-clamp-2, .line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.line-clamp-1 { -webkit-line-clamp: 1; }
+.line-clamp-2 { -webkit-line-clamp: 2; }
+.line-clamp-3 { -webkit-line-clamp: 3; }
+
+/* 🔧 Responsive tweaks */
+#profileWrapper {
+  @media (max-width: 445px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+#notificationSheet {
+  @media (min-width: 320px) and (max-width: 640px) {
+    width: 330px;
+  }
+}
